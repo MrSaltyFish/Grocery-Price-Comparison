@@ -18,7 +18,10 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Chip
+  Chip,
+  Select,
+  MenuItem,
+  FormControl
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import SearchBar from '../components/search/SearchBar';
@@ -58,7 +61,7 @@ const comparisonData = [
     category: 'Grains',
     image: basmatRiceImg,
     bigbasket: { price: 95, discount: null },
-    blinkit: { price: 92, discount: '₹8 off' },
+    blinkit: { price: 92, discount: null },
     offlineAverage: { price: 91, lowestPrice: 88, stores: 3 }
   },
   {
@@ -67,7 +70,7 @@ const comparisonData = [
     category: 'Essentials',
     image: sugarImg,
     bigbasket: { price: 55, discount: null },
-    blinkit: { price: 52, discount: '5% off' },
+    blinkit: { price: 52, discount: null },
     offlineAverage: { price: 50, lowestPrice: 48, stores: 4 }
   },
   {
@@ -75,7 +78,7 @@ const comparisonData = [
     product: 'Peanuts (500g)',
     category: 'Dry Fruits',
     image: peanutsImg,
-    bigbasket: { price: 120, discount: '₹10 off' },
+    bigbasket: { price: 120, discount: null },
     blinkit: { price: 125, discount: null },
     offlineAverage: { price: 115, lowestPrice: 110, stores: 2 }
   },
@@ -85,7 +88,7 @@ const comparisonData = [
     category: 'Pulses',
     image: turDaalImg,
     bigbasket: { price: 145, discount: null },
-    blinkit: { price: 140, discount: '₹15 off' },
+    blinkit: { price: 140, discount: null },
     offlineAverage: { price: 138, lowestPrice: 135, stores: 3 }
   },
   {
@@ -93,7 +96,7 @@ const comparisonData = [
     product: 'Wheat (1kg)',
     category: 'Grains',
     image: wheatImg,
-    bigbasket: { price: 42, discount: '₹3 off' },
+    bigbasket: { price: 42, discount: null },
     blinkit: { price: 45, discount: null },
     offlineAverage: { price: 38, lowestPrice: 35, stores: 5 }
   }
@@ -131,6 +134,7 @@ const HomePage = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [searchResults, setSearchResults] = useState(null);
+  const [selectedLocation, setSelectedLocation] = useState('');
 
   const handleSearch = (searchTerm) => {
     console.log('Searching for:', searchTerm);
@@ -145,6 +149,10 @@ const HomePage = () => {
     } else {
       setSearchResults(null);
     }
+  };
+
+  const handleLocationChange = (event) => {
+    setSelectedLocation(event.target.value);
   };
 
   return (
@@ -214,17 +222,18 @@ const HomePage = () => {
             }}
           >
             <LocationIcon color="action" fontSize="small" />
-            <Typography variant="body2" color="text.secondary">
-              Your Location: Mumbai, Maharashtra
-            </Typography>
-            <Button 
-              variant="text" 
-              size="small" 
-              color="primary"
-              sx={{ ml: 1, fontSize: '0.8rem' }}
-            >
-              Change
-            </Button>
+            <FormControl size="small" sx={{ minWidth: 150 }}>
+              <Select
+                value={selectedLocation}
+                onChange={handleLocationChange}
+                displayEmpty
+                size="small"
+              >
+                <MenuItem value="" disabled>Select location</MenuItem>
+                <MenuItem value="manewada">Manewada</MenuItem>
+                <MenuItem value="nandanwan">Nandanwan</MenuItem>
+              </Select>
+            </FormControl>
           </Box>
 
           {/* Search Results */}
@@ -284,11 +293,6 @@ const HomePage = () => {
                             <Typography variant="body1" fontWeight={isLowestPrice(item.bigbasket.price, item) ? 'bold' : 'regular'}>
                               ₹{item.bigbasket.price}
                             </Typography>
-                            {item.bigbasket.discount && (
-                              <Typography variant="caption" color="error" display="block">
-                                {item.bigbasket.discount}
-                              </Typography>
-                            )}
                           </TableCell>
                           
                           <TableCell align="center" sx={{ 
@@ -297,11 +301,6 @@ const HomePage = () => {
                             <Typography variant="body1" fontWeight={isLowestPrice(item.blinkit.price, item) ? 'bold' : 'regular'}>
                               ₹{item.blinkit.price}
                             </Typography>
-                            {item.blinkit.discount && (
-                              <Typography variant="caption" color="error" display="block">
-                                {item.blinkit.discount}
-                              </Typography>
-                            )}
                           </TableCell>
                           
                           <TableCell align="center" sx={{ 
@@ -309,9 +308,6 @@ const HomePage = () => {
                           }}>
                             <Typography variant="body1" fontWeight={isLowestPrice(item.offlineAverage.lowestPrice, item) ? 'bold' : 'regular'}>
                               ₹{item.offlineAverage.price}
-                            </Typography>
-                            <Typography variant="caption" color="text.secondary" display="block">
-                              As low as ₹{item.offlineAverage.lowestPrice}
                             </Typography>
                           </TableCell>
                           
@@ -326,12 +322,13 @@ const HomePage = () => {
                           <TableCell align="center">
                             <Button 
                               component="a"
-                              href={`https://www.google.com/maps/search/${findLowestPriceStore(item)}+near+me`}
+                              href={`https://www.google.com/maps/search/${findLowestPriceStore(item)}+near+${selectedLocation || 'me'}`}
                               target="_blank"
                               size="small" 
                               variant="outlined" 
                               color="primary"
                               startIcon={<DirectionsIcon fontSize="small" />}
+                              disabled={!selectedLocation}
                             >
                               Map
                             </Button>
@@ -406,11 +403,6 @@ const HomePage = () => {
                         />
                       )}
                     </Typography>
-                    {item.bigbasket.discount && (
-                      <Typography variant="caption" color="error" display="block">
-                        {item.bigbasket.discount}
-                      </Typography>
-                    )}
                   </TableCell>
                   
                   <TableCell align="center" sx={{ 
@@ -426,11 +418,6 @@ const HomePage = () => {
                         />
                       )}
                     </Typography>
-                    {item.blinkit.discount && (
-                      <Typography variant="caption" color="error" display="block">
-                        {item.blinkit.discount}
-                      </Typography>
-                    )}
                   </TableCell>
                   
                   <TableCell align="center" sx={{ 
@@ -445,9 +432,6 @@ const HomePage = () => {
                           sx={{ verticalAlign: 'text-bottom', ml: 0.5 }}
                         />
                       )}
-                    </Typography>
-                    <Typography variant="caption" color="text.secondary" display="block">
-                      As low as ₹{item.offlineAverage.lowestPrice}
                     </Typography>
                   </TableCell>
                   
@@ -467,20 +451,18 @@ const HomePage = () => {
                     <Typography variant="body2" fontWeight="bold" color="error">
                       Save ₹{Math.max(...[item.bigbasket.price, item.blinkit.price, item.offlineAverage.price]) - findLowestPrice(item)}
                     </Typography>
-                    <Typography variant="caption" color="text.secondary" display="block">
-                      ({Math.round(((Math.max(...[item.bigbasket.price, item.blinkit.price, item.offlineAverage.price]) - findLowestPrice(item)) / Math.max(...[item.bigbasket.price, item.blinkit.price, item.offlineAverage.price])) * 100)}% off)
-                    </Typography>
                   </TableCell>
                   
                   <TableCell align="center">
                     <Button 
                       component="a"
-                      href={`https://www.google.com/maps/search/${findLowestPriceStore(item)}+near+me`}
+                      href={`https://www.google.com/maps/search/${findLowestPriceStore(item)}+near+${selectedLocation || 'me'}`}
                       target="_blank"
                       size="small" 
                       variant="outlined" 
                       color="primary"
                       startIcon={<DirectionsIcon fontSize="small" />}
+                      disabled={!selectedLocation}
                     >
                       Map
                     </Button>
