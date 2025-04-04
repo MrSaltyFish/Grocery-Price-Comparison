@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Container, 
   Typography, 
@@ -153,6 +153,14 @@ const HomePage = () => {
 
   const handleLocationChange = (event) => {
     setSelectedLocation(event.target.value);
+  };
+
+  const getMapUrl = (storeName) => {
+    if (selectedLocation) {
+      return `https://www.google.com/maps/search/${encodeURIComponent(storeName)}+near+${encodeURIComponent(selectedLocation)}`;
+    } else {
+      return `https://www.google.com/maps/search/${encodeURIComponent(storeName)}`;
+    }
   };
 
   return (
@@ -322,13 +330,12 @@ const HomePage = () => {
                           <TableCell align="center">
                             <Button 
                               component="a"
-                              href={`https://www.google.com/maps/search/${findLowestPriceStore(item)}+near+${selectedLocation || 'me'}`}
+                              href={getMapUrl(findLowestPriceStore(item))}
                               target="_blank"
                               size="small" 
                               variant="outlined" 
                               color="primary"
                               startIcon={<DirectionsIcon fontSize="small" />}
-                              disabled={!selectedLocation}
                             >
                               Map
                             </Button>
@@ -456,13 +463,12 @@ const HomePage = () => {
                   <TableCell align="center">
                     <Button 
                       component="a"
-                      href={`https://www.google.com/maps/search/${findLowestPriceStore(item)}+near+${selectedLocation || 'me'}`}
+                      href={getMapUrl(findLowestPriceStore(item))}
                       target="_blank"
                       size="small" 
                       variant="outlined" 
                       color="primary"
                       startIcon={<DirectionsIcon fontSize="small" />}
-                      disabled={!selectedLocation}
                     >
                       Map
                     </Button>

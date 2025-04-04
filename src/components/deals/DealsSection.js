@@ -22,72 +22,84 @@ import {
   Store as StoreIcon
 } from '@mui/icons-material';
 
+// Import product images
+import basmatRiceImage from '../../assets/images/basmati_rice.jpeg';
+import peanutsImage from '../../assets/images/peanuts.jpeg';
+import sugarImage from '../../assets/images/sugar.jpeg';
+import turDaalImage from '../../assets/images/tur_daal.jpeg';
+import wheatImage from '../../assets/images/wheat.jpeg';
+
+// Import store images for store icons
+import store1Image from '../../assets/images/store1.jpeg';
+import store2Image from '../../assets/images/store2.jpeg';
+import store3Image from '../../assets/images/store3.jpeg';
+
 // Sample data for deals - in a real app, this would come from API
 const dealsData = [
   {
     id: 1,
-    title: "Weekend Flash Sale",
+    title: "Weekend Flash Sale on Rice",
     store: "Fresh Market",
-    storeIcon: "https://via.placeholder.com/40",
+    storeIcon: store1Image,
     discount: "Up to 25% off",
-    category: "All Fruits & Vegetables",
+    category: "Basmati Rice",
     expiryDate: "2 days left",
-    image: "https://via.placeholder.com/300x150",
+    image: basmatRiceImage,
     type: "flash"
   },
   {
     id: 2,
-    title: "Get 10% cashback",
+    title: "Get 10% cashback on Peanuts",
     store: "Kirana Store",
-    storeIcon: "https://via.placeholder.com/40",
+    storeIcon: store2Image,
     discount: "10% cashback",
-    category: "Min. order ₹500",
+    category: "Whole Peanuts",
     expiryDate: "1 week left",
-    image: "https://via.placeholder.com/300x150",
+    image: peanutsImage,
     type: "cashback"
   },
   {
     id: 3,
-    title: "Buy 1 Get 1 Free",
+    title: "Buy 1 Get 1 Free on Sugar",
     store: "Premium Grocery",
-    storeIcon: "https://via.placeholder.com/40",
+    storeIcon: store3Image,
     discount: "Buy 1 Get 1",
-    category: "Selected Dairy Products",
+    category: "Pure Refined Sugar",
     expiryDate: "3 days left",
-    image: "https://via.placeholder.com/300x150",
+    image: sugarImage,
     type: "bogo"
   },
   {
     id: 4,
-    title: "New User Offer",
+    title: "New User Offer on Tur Daal",
     store: "BigBasket",
-    storeIcon: "https://via.placeholder.com/40",
+    storeIcon: store1Image,
     discount: "Flat ₹100 off",
     category: "First order only",
     expiryDate: "Ongoing",
-    image: "https://via.placeholder.com/300x150",
+    image: turDaalImage,
     type: "first_order"
   },
   {
     id: 5,
-    title: "Festival Special",
+    title: "Festival Special on Wheat",
     store: "Fresh Market",
-    storeIcon: "https://via.placeholder.com/40",
+    storeIcon: store2Image,
     discount: "Up to 30% off",
-    category: "Sweets & Snacks",
+    category: "Premium Wheat",
     expiryDate: "5 days left",
-    image: "https://via.placeholder.com/300x150",
+    image: wheatImage,
     type: "seasonal"
   },
   {
     id: 6,
-    title: "Free Delivery",
+    title: "Free Delivery with Rice",
     store: "BigBasket",
-    storeIcon: "https://via.placeholder.com/40",
+    storeIcon: store3Image,
     discount: "Free Delivery",
     category: "Orders above ₹700",
     expiryDate: "Ongoing",
-    image: "https://via.placeholder.com/300x150",
+    image: basmatRiceImage,
     type: "delivery"
   }
 ];

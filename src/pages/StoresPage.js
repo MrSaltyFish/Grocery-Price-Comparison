@@ -3,13 +3,21 @@ import { Container, Typography, Box, Breadcrumbs, Link, Grid, Card, CardContent,
 import { Link as RouterLink } from 'react-router-dom';
 import { NavigateNext as NavigateNextIcon, LocationOn as LocationIcon, AccessTime as TimeIcon, Phone as PhoneIcon } from '@mui/icons-material';
 
+// Import store images
+import store1Image from '../assets/images/store1.jpeg';
+import store2Image from '../assets/images/store2.jpeg';
+import store3Image from '../assets/images/store3.jpeg';
+import store4Image from '../assets/images/store4.jpeg';
+import store5Image from '../assets/images/store5.jpeg';
+import store6Image from '../assets/images/store6.jpeg';
+
 // Sample stores data - would come from API in real app
 const storesData = [
   {
     id: 1,
     name: 'Fresh Market',
     type: 'Supermarket',
-    image: 'https://via.placeholder.com/400x200',
+    image: store1Image,
     rating: 4.2,
     address: '123 Market Street, Andheri East, Mumbai',
     distance: '0.5 km',
@@ -21,7 +29,7 @@ const storesData = [
     id: 2,
     name: 'Kirana Store',
     type: 'Local Store',
-    image: 'https://via.placeholder.com/400x200',
+    image: store2Image,
     rating: 4.0,
     address: '45 Local Market, Bandra West, Mumbai',
     distance: '0.8 km',
@@ -33,7 +41,7 @@ const storesData = [
     id: 3,
     name: 'Premium Grocery',
     type: 'Supermarket',
-    image: 'https://via.placeholder.com/400x200',
+    image: store3Image,
     rating: 4.7,
     address: '67 Shopping Center, Juhu, Mumbai',
     distance: '1.2 km',
@@ -45,7 +53,7 @@ const storesData = [
     id: 4,
     name: 'BigBasket',
     type: 'Online Store',
-    image: 'https://via.placeholder.com/400x200',
+    image: store4Image,
     rating: 4.5,
     address: 'Online Only',
     distance: 'Online',
@@ -57,7 +65,7 @@ const storesData = [
     id: 5,
     name: 'Neighborhood Market',
     type: 'Local Store',
-    image: 'https://via.placeholder.com/400x200',
+    image: store5Image,
     rating: 3.9,
     address: '89 Local Street, Powai, Mumbai',
     distance: '1.5 km',
@@ -69,7 +77,7 @@ const storesData = [
     id: 6,
     name: 'Organic Basket',
     type: 'Specialty Store',
-    image: 'https://via.placeholder.com/400x200',
+    image: store6Image,
     rating: 4.6,
     address: '22 Health Avenue, Colaba, Mumbai',
     distance: '2.3 km',
