@@ -63,6 +63,9 @@ const Footer = () => {
             <Link href="/compare" color="inherit" display="block" sx={{ mb: 1, textDecoration: 'none' }}>
               Price Comparison
             </Link>
+            <Link href="/subscriptions" color="inherit" display="block" sx={{ mb: 1, textDecoration: 'none' }}>
+              Subscriptions
+            </Link>
           </Grid>
           
           <Grid item xs={12} sm={6} md={3}>

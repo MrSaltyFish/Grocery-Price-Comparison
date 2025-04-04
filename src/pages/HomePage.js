@@ -26,6 +26,7 @@ import {
 import { Link } from 'react-router-dom';
 import SearchBar from '../components/search/SearchBar';
 import DealsSection from '../components/deals/DealsSection';
+import SubscriptionPromo from '../components/subscription/SubscriptionPromo';
 import { 
   LocalOffer as OfferIcon, 
   CompareArrows as CompareIcon, 
@@ -351,6 +352,30 @@ const HomePage = () => {
         </Paper>
       </Container>
 
+      {/* Tips Section - Simplified */}
+      <Container maxWidth="lg" sx={{ mb: 6 }}>
+        <Paper 
+          elevation={1}
+          sx={{ 
+            p: 3, 
+            borderRadius: 2
+          }}
+        >
+          <Typography variant="h6" fontWeight="bold" gutterBottom>
+            <TipIcon sx={{ mr: 1, verticalAlign: 'text-bottom', color: theme.palette.primary.main }} />
+            Shopping Tips
+          </Typography>
+          <Typography variant="body2" paragraph>
+            Compare prices across stores | Check for ongoing promotions | Buy seasonal produce | Plan your grocery list in advance
+          </Typography>
+        </Paper>
+      </Container>
+
+      {/* Subscription Promo Section */}
+      <Container maxWidth="lg" sx={{ mb: 6 }}>
+        <SubscriptionPromo />
+      </Container>
+
       {/* Main Comparison Table */}
       <Container maxWidth="lg" sx={{ mb: 6 }}>
         <Typography variant="h4" component="h2" gutterBottom fontWeight="bold" textAlign="center">
@@ -484,25 +509,6 @@ const HomePage = () => {
             * Prices last updated on {new Date().toLocaleDateString()} and are subject to change
           </Typography>
         </Box>
-      </Container>
-
-      {/* Tips Section - Simplified */}
-      <Container maxWidth="lg" sx={{ mb: 6 }}>
-        <Paper 
-          elevation={1}
-          sx={{ 
-            p: 3, 
-            borderRadius: 2
-          }}
-        >
-          <Typography variant="h6" fontWeight="bold" gutterBottom>
-            <TipIcon sx={{ mr: 1, verticalAlign: 'text-bottom', color: theme.palette.primary.main }} />
-            Shopping Tips
-          </Typography>
-          <Typography variant="body2" paragraph>
-            Compare prices across stores | Check for ongoing promotions | Buy seasonal produce | Plan your grocery list in advance
-          </Typography>
-        </Paper>
       </Container>
     </>
   );

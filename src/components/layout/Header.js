@@ -111,11 +111,19 @@ const Header = () => {
               <Button 
                 color="inherit" 
                 component={Link} 
+                to="/subscriptions"
+                sx={{ mr: 1 }}
+              >
+                Subscriptions
+              </Button>
+              {/* <Button 
+                color="inherit" 
+                component={Link} 
                 to="/compare"
                 sx={{ mr: 1 }}
               >
                 Compare
-              </Button>
+              </Button> */}
             </>
           )}
         </Box>
@@ -129,6 +137,7 @@ const Header = () => {
           <MenuItem onClick={handleMenuClose} component={Link} to="/deals">Deals</MenuItem>
           <MenuItem onClick={handleMenuClose} component={Link} to="/stores">Stores</MenuItem>
           <MenuItem onClick={handleMenuClose} component={Link} to="/compare">Compare</MenuItem>
+          <MenuItem onClick={handleMenuClose} component={Link} to="/subscriptions">Subscriptions</MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>

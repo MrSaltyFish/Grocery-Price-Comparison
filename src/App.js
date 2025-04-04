@@ -8,6 +8,9 @@ import ComparePage from './pages/ComparePage';
 import StoresPage from './pages/StoresPage';
 import ProfilePage from './pages/ProfilePage';
 import CartPage from './pages/CartPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import SubscriptionsPage from './pages/SubscriptionsPage';
 
 // Create a custom theme
 const theme = createTheme({
@@ -89,6 +92,9 @@ function App() {
             <Route path="/stores" element={<StoresPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/subscriptions" element={<SubscriptionsPage />} />
           </Routes>
         </Layout>
       </Router>
