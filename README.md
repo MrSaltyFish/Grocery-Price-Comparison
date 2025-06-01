@@ -1,72 +1,92 @@
-# Getting Started with Create React App
+# 🛒 Grocery Price Comparison – Frontend
 
-You are see a demo of this website here - https://jit-hackathon-frontend.vercel.app/
+Compare grocery and food item prices across platforms like **BigBasaket**, **Blinkit**, and others – all in one place.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the **frontend** of a powerful web application designed to help users make smarter buying decisions by comparing prices across multiple food delivery and grocery platforms in real time.
 
-## Available Scripts
+> 💰 Save money. Make informed decisions. One platform to compare them all.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🔗 Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+👉 [Launch App](https://jit-hackathon-frontend.vercel.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ⚙️ Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Framework:** React.js
+- **Styling:** TailwindCSS
+- **Routing:** React Router DOM
+- **State Management:** Context API
+- **Deployment:** Vercel
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧠 Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 🔍 **Search** for any grocery or food item
+- 📊 **Real-time comparison** of prices across multiple platforms
+- 🛍️ View product availability per platform
+- 💡 Suggests the cheapest option dynamically
+- 💎 Clean, responsive UI for mobile and desktop
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📦 Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To run locally:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/MrSaltyFish/Grocery-Price-Comparison.git
+cd Grocery-Price-Comparison
+npm install
+npm run dev
+````
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🗂️ Folder Structure
 
-## Learn More
+```
+📦 Grocery-Price-Comparison
+├── 📁 public
+├── 📁 src
+│   ├── 📁 components
+│   ├── 📁 pages
+│   ├── 📁 context
+│   ├── 📁 utils
+│   └── App.jsx
+├── .env
+└── package.json
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔮 Future Roadmap
 
-### Code Splitting
+* 🧾 Add user login and watchlists
+* 📦 Add more platforms (BigBasket, Blinkit, etc.)
+* 📉 Price history tracking
+* 📬 Price-drop alerts via email
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🙌 Contributing
+Pull requests welcome. Whether it's bug fixes, new features, or performance improvements—contributions are appreciated.
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📬 Contact
 
-### Making a Progressive Web App
+For collabs, partnerships, or investment talk:
+**Anvesh (a.k.a. MrSaltyFish)**
+📧 [anveshkhode7588@gmail.com](mailto:anveshkhode7588@gmail.com)
+📱 [LinkedIn](https://www.linkedin.com/in/anvesh-k-5bba47259/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+> 💸 "The best deals aren’t found – they’re compared."
+> Power your wallet with data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
